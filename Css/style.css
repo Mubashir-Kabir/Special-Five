@@ -1,13 +1,18 @@
-.banner{
-    background-color: rgb(10, 10, 10);
+body {
+  font-family: "Poppins", sans-serif;
 }
-.card{
-    background-color: rgb(10, 10, 10) !important ;
-    color: white;
-
+h1 {
+  font-family: "Lobster Two", cursive;
 }
-input{
-    background-color:rgb(10, 10, 10);
-    color: white;
-    border: 1px solid white;
+.banner {
+  background-color: rgb(10, 10, 10);
+}
+.card {
+  background-color: rgb(10, 10, 10) !important ;
+  color: white;
+}
+input {
+  background-color: rgb(10, 10, 10);
+  color: white;
+  border: 1px solid white;
 }
