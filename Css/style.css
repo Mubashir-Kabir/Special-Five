@@ -1,0 +1,13 @@
+.banner{
+    background-color: rgb(10, 10, 10);
+}
+.card{
+    background-color: rgb(10, 10, 10) !important ;
+    color: white;
+
+}
+input{
+    background-color:rgb(10, 10, 10);
+    color: white;
+    border: 1px solid white;
+}
