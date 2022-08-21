@@ -126,7 +126,7 @@
                   alt="..."
                 />
                 <div class="card-body text-center">
-                  <h5 class="card-title">Mustafizur-Rahman</h5>
+                  <h5 class="card-title">Mustafizur Rahman</h5>
                   <p class="card-text row g-1 text-muted">
                     <span class="col">Runs: 1234</span
                     ><span class="col">Wickets: 123</span>
@@ -255,47 +255,49 @@
               </div>
             </div>
           </div>
-
-          <!-- calcultion card section  -->
         </div>
+
+         <!-- selection and calcultion card section  -->
         <div class="col-md-3 col-12">
           <div class="row row-cols-1 g-3">
+            <!-- selection section  -->
             <div class="col">
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title text-center">Your Selection</h5>
                   <hr class="border border-warning border-2 opacity-75">
-                  <ol>
-                    <li>Sakib Al Hasan</li>
+                  <ol id="selectedPlayersField">
+                    <!-- <li>Sakib Al Hasan</li>
                     <li>Tamim Iqbal</li>
                     <li>Liton Das</li>
                     <li>Rubel hossain</li>
-                    <li>Sabbir Rahman</li>
+                    <li>Sabbir Rahman</li> -->
                   </ol>
                 </div>
               </div>
             </div>
+            <!-- calculation section  -->
             <div class="col">
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title text-center">Budget</h5>
                   <hr class="border border-warning border-2 opacity-75">
                   <p class="card-text d-flex justify-content-between">
-                   <span>Per Player:</span> <input class="w-50" type="text">
+                   <span>Per Player:</span> <input id="perPlayerCost" class="w-50" type="text">
                   </p>
-                  <div class="text-center my-2"><button class="btn calculateBtn btn-primary w-100 ">Calculate</button></div>
+                  <div class="text-center my-2"><button id="calculateBtn" class="btn  btn-primary w-100 ">Calculate</button></div>
                    <p class="card-text my-3 d-flex justify-content-between">
-                   <span>Player Expenses:</span> <span>$ <span>5000</span></span>
+                   <span>Player Expenses:</span> <span>$ <span id="playerExpenses">00</span></span>
                   </p>
                   <p class="card-text d-flex justify-content-between">
-                   <span>Manager:</span> <input class="w-50" type="text">
+                   <span>Manager:</span> <input id="managerCost" class="w-50" type="text">
                   </p>
                   <p class="card-text d-flex justify-content-between">
-                   <span>Coach:</span> <input class="w-50" type="text">
+                   <span>Coach:</span> <input id="coachCost" class="w-50" type="text">
                   </p>
-                  <div class="text-center my-2"><button class="btn calculateTotalBtn btn-primary w-100 ">Calculate Total</button></div>
+                  <div class="text-center my-2"><button id="calculateTotalBtn" class="btn  btn-primary w-100 ">Calculate Total</button></div>
                   <p class="card-text my-4 d-flex justify-content-between">
-                   <span>Total:</span> <span class="text-warning">$ <span>5000</span></span>
+                   <span>Total:</span> <span class="text-warning">$ <span id="totalCost">00</span></span>
                   </p>
                 </div>
               </div>
