@@ -27,16 +27,14 @@ for (const btn of selectBtns) {
 
 // calculate button click handle
 document.getElementById("calculateBtn").addEventListener("click", function () {
-  if (
-    isNaN(document.getElementById("perPlayerCost").value) ||
-    document.getElementById("perPlayerCost").value < 0 ||
-    document.getElementById("perPlayerCost").value == "" ||
-    document.getElementById("perPlayerCost").value == " " ||
-    document.getElementById("perPlayerCost").value == "  "
-  ) {
-    document.getElementById("perPlayerCost").value = "";
-
-    return alert("Amounts should be positive numbers!!");
+  if (isInputInvalid("perPlayerCost")) {
+    resetValue("perPlayerCost");
+    document.getElementById("playerExpenses").innerText = "00";
+    return alert("Input valid per player cost!");
+  } else if (selectedPlayers() == 0) {
+    resetValue("perPlayerCost");
+    document.getElementById("playerExpenses").innerText = "00";
+    return alert("please select player first");
   }
   document.getElementById("playerExpenses").innerText = playerExpenses();
 });
@@ -45,29 +43,18 @@ document.getElementById("calculateBtn").addEventListener("click", function () {
 document
   .getElementById("calculateTotalBtn")
   .addEventListener("click", function () {
-    if (
-      isNaN(playerExpenses()) ||
-      document.getElementById("perPlayerCost").value == "" ||
-      document.getElementById("perPlayerCost").value == " " ||
-      document.getElementById("perPlayerCost").value == "  " ||
-      document.getElementById("managerCost").value == "" ||
-      document.getElementById("managerCost").value == " " ||
-      document.getElementById("managerCost").value == "  " ||
-      document.getElementById("coachCost").value == "" ||
-      document.getElementById("coachCost").value == " " ||
-      document.getElementById("coachCost").value == "  " ||
-      isNaN(document.getElementById("managerCost").value) ||
-      document.getElementById("managerCost").value < 0 ||
-      isNaN(document.getElementById("coachCost").value) ||
-      document.getElementById("coachCost").value < 0
-    ) {
-      document.getElementById("perPlayerCost").value = "";
-      document.getElementById("managerCost").value = "";
-      document.getElementById("coachCost").value = "";
-
-      return alert("Amounts should be positive numbers!!");
+    if (isInputInvalid("perPlayerCost")) {
+      resetValue("perPlayerCost");
+      document.getElementById("playerExpenses").innerText = "00";
+      return alert("Input valid per player cost!");
+    } else if (isInputInvalid("managerCost")) {
+      resetValue("managerCost");
+      return alert("Input valid manager cost!");
+    } else if (isInputInvalid("coachCost")) {
+      resetValue("coachCost");
+      return alert("Input valid coach cost!");
+    } else {
+      document.getElementById("playerExpenses").innerText = playerExpenses();
+      document.getElementById("totalCost").innerText = totalCost();
     }
-    document.getElementById("playerExpenses").innerText = playerExpenses();
-
-    document.getElementById("totalCost").innerText = totalCost();
   });
