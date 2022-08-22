@@ -8,9 +8,6 @@ for (const btn of selectBtns) {
     if (isPlayerFull()) {
       return alert("You can not select more than five");
     }
-    document.getElementById("perPlayerCost").value = "";
-    document.getElementById("managerCost").value = "";
-    document.getElementById("coachCost").value = "";
     document.getElementById("playerExpenses").innerText = "00";
     document.getElementById("totalCost").innerText = "00";
 
@@ -32,7 +29,7 @@ document.getElementById("calculateBtn").addEventListener("click", function () {
     document.getElementById("playerExpenses").innerText = "00";
     return alert("Input valid per player cost!");
   } else if (selectedPlayers() == 0) {
-    resetValue("perPlayerCost");
+    document.getElementById("totalCost").innerText = "00";
     document.getElementById("playerExpenses").innerText = "00";
     return alert("please select player first");
   }
@@ -43,7 +40,11 @@ document.getElementById("calculateBtn").addEventListener("click", function () {
 document
   .getElementById("calculateTotalBtn")
   .addEventListener("click", function () {
-    if (isInputInvalid("perPlayerCost")) {
+    if (selectedPlayers() == 0) {
+      document.getElementById("totalCost").innerText = "00";
+      document.getElementById("playerExpenses").innerText = "00";
+      return alert("please select player first");
+    } else if (isInputInvalid("perPlayerCost")) {
       resetValue("perPlayerCost");
       document.getElementById("playerExpenses").innerText = "00";
       return alert("Input valid per player cost!");
