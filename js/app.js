@@ -8,10 +8,20 @@ for (const btn of selectBtns) {
     if (isPlayerFull()) {
       return alert("You can not select more than five");
     }
+    document.getElementById("perPlayerCost").value = "";
+    document.getElementById("managerCost").value = "";
+    document.getElementById("coachCost").value = "";
+    document.getElementById("playerExpenses").innerText = "00";
+    document.getElementById("totalCost").innerText = "00";
+
     const li = document.createElement("li");
     li.innerText = event.target.parentNode.childNodes[1].innerText;
     selectedPlayersField.appendChild(li);
     event.target.disabled = true;
+    event.target.innerText = "Selected";
+
+    event.target.style.backgroundColor = "gray";
+    event.target.style.color = "black";
   });
 }
 
